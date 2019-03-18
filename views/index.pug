@@ -1,0 +1,100 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.0/css/all.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css')
+    link(href="assets/css/addons/datatables.min.css" rel="stylesheet")
+    link(rel='stylesheet' href='assets/styles.css')
+    title= title
+  body
+    div.card.card-image
+      div.card-header
+        h4.card-titleCard 
+          i.fas.fa-users.title Gestión de usuarios
+      div.card-body
+        table#dtBasicExample.table.table-striped.table-bordered(cellspacing="0" width="100%")
+          thead
+            tr
+              th.th-sm Nombre
+              th.th-sm Apellido
+              th.th-sm Teléfono
+              th.th-sm Acciones
+
+    div#details-user.modal.fade(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true") 
+      div.modal-dialog(role="document")
+        div.modal-content
+          div.modal-header.form
+            div#img-logo.img-logo
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times;
+          div.modal-body
+
+    div#edit-user.modal.fade(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true") 
+      div.modal-dialog(role="document")
+        div.modal-content
+          div.modal-header.form
+            div#img-logo-edit.img-logo
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times;
+          div.modal-body
+            div#header-body
+            form.form-edit.needs-validation
+              div.md-form.mb-5
+                i.fas.fa-phone.prefix.grey-text
+                input#phone.form-control(type="text")
+                label#label-phone(for="phone") Teléfono
+                div#error-phone.error-message Formato de teléfono incorrecto
+              div.md-form.mb-4
+                i.fas.fa-envelope.prefix.grey-text
+                input#email.form-control(type="email")
+                label#label-email(for="email") Email
+                div#error-email.error-message Formato de email incorrecto
+              div.md-form.mb-4
+                i.fas.fa-map-marked-alt.prefix.grey-text
+                input#address.form-control.validate(type="text")
+                label#label-address(for="address") Dirección
+                input#id-item(hidden)
+          div.modal-footer
+            button(type="button" class="btn btn-light" data-dismiss="modal") Cancelar
+            button#send-edit(type="button" class="btn btn-primary") Editar
+    
+    div#modalSuccess.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+      div.modal-dialog.modal-notify.modal-success(role="document")
+        div.modal-content
+          div.modal-header
+            p.heading.lead Correcto
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true" class="white-text") &times;
+          div.modal-body
+            div.text-center
+              i.fas.fa-check.fa-4x.mb-3.animated.rotateIn
+              p Acción realizada correctamente
+
+    div#modalDelete.modal.fade(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+      div.modal-dialog.modal-notify.modal-warning(role="document")
+        div.modal-content
+          div.modal-header
+            p.heading Alerta!
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true" class="white-text") &times;
+          div.modal-body
+           div.row
+            div#left-logo.col-3.text-center
+            div.col-9
+              input#id-item-delete(hidden)
+              div.text-center
+                i.fas.fa-trash-alt.fa-4x.mb-3.animated.rotateIn
+                p Seguro que desea eliminar el usuario?
+                p.card-text
+                  strong AL aceptar será eliminado de la lista
+          div.modal-footer
+            button(type="button" class="btn btn-light" data-dismiss="modal") Cancelar
+            button#delete-user(type="button" class="btn btn-warning") Aceptar
+    script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js')
+    script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js')
+    script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js')
+    script(type="text/javascript" src="assets/js/addons/datatables.min.js")
+    script(type="text/javascript" src="assets/js/moment.min.js")
+    script(type='text/javascript' src='assets/js/scripts.js')
