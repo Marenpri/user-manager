@@ -3,7 +3,7 @@ const app = express();
 const fetch = require('node-fetch');
 
 const PORT = 8080;
-const HOST = 'localhost';
+const HOST = '0.0.0.0';
 
 app.use(express.json());
 app.use(express.static(__dirname + '/src'));
