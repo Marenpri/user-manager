@@ -3,6 +3,7 @@ User manager using nodejs-express-pug
 
 ## Pasos a seguir:
 -"Clone or download" el repo
+
 -Desde la consola cd /path/to/repo
 
 ### -Con docker
